@@ -1,0 +1,10 @@
+﻿@page
+@model IndexModel
+
+
+<form method="post">
+    <input type="text" placeholder="Username" asp-for="@Model.Username">
+    <input type="password" placeholder="Password" asp-for="@Model.Password" />
+    <input type="submit" value="Sign In" />
+    <a asp-page="Register">Register</a>
+</form>
