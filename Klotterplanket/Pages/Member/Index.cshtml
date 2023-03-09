@@ -5,14 +5,20 @@
 
 <h1>Welcome </h1>
 
-<div class="row">
+<ul style="height:400px; list-style-type:none; overflow:hidden; overflow-y:scroll;">
     @foreach (var msg in Model.MessageList)
     {
-        <div class="col-12 border border-dark border-2 m-3">
-            @msg.Message
-        </div>
+        <li>
+            <div>
+                @msg.Username <span class="m-3">@msg.Date</span>
+            </div>
+            <div class="border border-dark border-2 m-3">
+                @msg.Message
+            </div>
+        </li>
     }
-</div>
+</ul>
+   
 
 <form method="post">
     <input type="text" placeholder="Message" asp-for="@Model.NewMessage"/>

@@ -46,10 +46,15 @@ namespace Klotterplanket.Pages.Member
                 Username = username
             };
 
-           await messageRepo.AddMessage(messageToAdd);
+            if (messageToAdd.Message != null)
+            {
+                await messageRepo.AddMessage(messageToAdd);
+            }
 
             MessageList = await messageRepo.GetAllMessages();
 
+            ModelState.Clear();
+            NewMessage = String.Empty;
             return Page();
         }
     }
